@@ -5,4 +5,39 @@ return {
       preset = "modern",
     },
   },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    opts = function(_, opts)
+      local get_icon = require("icons").get_icon
+      opts.default_component_configs = vim.tbl_deep_extend("force", opts.default_component_configs, {
+        indent = {
+          padding = 0,
+          expander_collapsed = get_icon("FoldClosed"),
+          expander_expanded = get_icon("FoldOpen"),
+        },
+        icon = {
+          folder_closed = get_icon("FolderClosed"),
+          folder_open = get_icon("FolderOpen"),
+          folder_empty = get_icon("FolderEmpty"),
+          folder_empty_open = get_icon("FolderEmpty"),
+          default = get_icon("DefaultFile"),
+        },
+        modified = { symbol = get_icon("FileModified") },
+        git_status = {
+          symbols = {
+            added = get_icon("GitAdd"),
+            deleted = get_icon("GitDelete"),
+            -- modified = get_icon("GitChange"),
+            modified = "",
+            renamed = get_icon("GitRenamed"),
+            untracked = get_icon("GitUntracked"),
+            ignored = get_icon("GitIgnored"),
+            unstaged = get_icon("GitUnstaged"),
+            staged = get_icon("GitStaged"),
+            conflict = get_icon("GitConflict"),
+          },
+        },
+      })
+    end,
+  },
 }
