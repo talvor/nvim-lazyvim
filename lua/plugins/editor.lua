@@ -13,7 +13,7 @@ return {
         indent = {
           padding = 0,
           expander_collapsed = get_icon("FoldClosed"),
-          expander_expanded = get_icon("FoldOpen"),
+          expander_expanded = get_icon("FoldOpened"),
         },
         icon = {
           folder_closed = get_icon("FolderClosed"),
@@ -27,8 +27,7 @@ return {
           symbols = {
             added = get_icon("GitAdd"),
             deleted = get_icon("GitDelete"),
-            -- modified = get_icon("GitChange"),
-            modified = "",
+            modified = get_icon("GitChange"),
             renamed = get_icon("GitRenamed"),
             untracked = get_icon("GitUntracked"),
             ignored = get_icon("GitIgnored"),
