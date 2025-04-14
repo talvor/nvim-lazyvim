@@ -1,3 +1,5 @@
+local get_icon = require("icons").get_icon
+
 return {
   {
     "folke/which-key.nvim",
@@ -7,9 +9,8 @@ return {
   },
   {
     "nvim-neo-tree/neo-tree.nvim",
-    opts = function(_, opts)
-      local get_icon = require("icons").get_icon
-      opts.default_component_configs = vim.tbl_deep_extend("force", opts.default_component_configs, {
+    opts = {
+      default_component_configs = {
         indent = {
           padding = 0,
           expander_collapsed = get_icon("FoldClosed"),
@@ -36,7 +37,7 @@ return {
             conflict = get_icon("GitConflict"),
           },
         },
-      })
-    end,
+      },
+    },
   },
 }
