@@ -57,6 +57,7 @@ local M = {
     Tab = "󰓩",
     TabClose = "󰅙",
     Terminal = "",
+    WebRequest = "󱞑",
     Window = "",
     WordFile = "󰈭",
   },
