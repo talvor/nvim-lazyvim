@@ -8,24 +8,13 @@ return {
     },
   },
   {
-    "nvim-neo-tree/neo-tree.nvim",
+    "folke/snacks.nvim",
     opts = {
-      default_component_configs = {
-        indent = {
-          padding = 0,
-          expander_collapsed = get_icon("FoldClosed"),
-          expander_expanded = get_icon("FoldOpened"),
-        },
-        icon = {
-          folder_closed = get_icon("FolderClosed"),
-          folder_open = get_icon("FolderOpen"),
-          folder_empty = get_icon("FolderEmpty"),
-          folder_empty_open = get_icon("FolderEmpty"),
-          default = get_icon("DefaultFile"),
-        },
-        modified = { symbol = get_icon("FileModified") },
-        git_status = {
-          symbols = {
+      explorer = {},
+      picker = {
+        icons = {
+          git = {
+            enabled = true, -- show git icons
             added = get_icon("GitAdd"),
             deleted = get_icon("GitDelete"),
             modified = get_icon("GitChange"),
